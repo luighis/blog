@@ -1,6 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { PostProps } from '../../types'
 
-export const initialState = {
+interface PostsUserState {
+  loading: boolean
+  hasErrors: boolean
+  postsUser: PostProps[]
+}
+
+export const initialState: PostsUserState = {
   loading: false,
   hasErrors: false,
   postsUser: [],

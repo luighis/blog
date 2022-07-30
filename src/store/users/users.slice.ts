@@ -1,13 +1,13 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { UserProps } from '../../types'
 
 interface UsersState {
   loading: boolean
   hasErrors: boolean
-  users: any
+  users: UserProps[]
 }
 
-export const initialState = {
+export const initialState: UsersState = {
   loading: false,
   hasErrors: false,
   users: [],
@@ -17,7 +17,7 @@ const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    getUsers: (state) => {
+    loading: (state) => {
       state.loading = true
     },
     getUsersSuccess: (state, { payload }) => {
@@ -25,13 +25,13 @@ const usersSlice = createSlice({
       state.loading = false
       state.hasErrors = false
     },
-    getUsersFailure: (state) => {
+    failure: (state) => {
       state.loading = false
       state.hasErrors = true
     },
   },
 })
 
-export const { getUsers, getUsersSuccess, getUsersFailure } = usersSlice.actions
+export const { loading, getUsersSuccess, failure } = usersSlice.actions
 export const usersSelector = (state) => state.users
 export default usersSlice.reducer

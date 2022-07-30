@@ -1,9 +1,9 @@
 import { API } from '../../constants'
-import { getUsers, getUsersFailure, getUsersSuccess } from './users.slice'
+import { loading, getUsersSuccess, failure } from './users.slice'
 
 export function fetchUsers() {
   return async (dispatch) => {
-    dispatch(getUsers())
+    dispatch(loading())
 
     try {
       const response = await fetch(`${API}users`)
@@ -12,7 +12,7 @@ export function fetchUsers() {
 
       dispatch(getUsersSuccess(data))
     } catch (error) {
-      dispatch(getUsersFailure())
+      dispatch(failure())
     }
   }
 }

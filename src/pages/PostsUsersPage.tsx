@@ -8,13 +8,14 @@ import Post from '../components/Post'
 import { useAppDispatch, useAppSelector } from '../hooks/store'
 import { fetchAddPostsUser, fetchPostsUser } from '../store/postsUser/postsUser.action'
 import { postsUserSelector } from '../store/postsUser/postsUser.slice'
-import styled from 'styled-components'
 import Button from '../components/common/Button'
 import FormModal from '../components/FormModal'
+import styled from 'styled-components'
 
-const StyledSubTitle = styled(SubTitle)`
-  color: ${({ theme }) => theme.colors.purple};
-  padding: 5px 0 15px;
+const SectionContainer = styled.section`
+  h3 {
+    padding: 10px 0;
+  }
 `
 
 const TitleContainer = styled.div`
@@ -51,15 +52,15 @@ const PostsUsersPage = () => {
   }, [dispatch])
 
   return (
-    <section>
+    <SectionContainer>
       <FormModal openModal={open} handleClose={handleClose} handleForm={handleForm} />
       <TitleContainer>
         <Title>Posts</Title>
         <Button onClick={handleOpen}>Add Post</Button>
       </TitleContainer>
-      <StyledSubTitle>User - {user}</StyledSubTitle>
+      <SubTitle secondary>User - {user}</SubTitle>
       {renderPosts()}
-    </section>
+    </SectionContainer>
   )
 }
 

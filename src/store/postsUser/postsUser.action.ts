@@ -60,7 +60,6 @@ export function fetchRemovePostsUser(postId) {
       })
 
       if (!response.ok) throw response
-      // const data = await response.json()
 
       dispatch(postsUserRemove(postId))
     } catch (error) {
