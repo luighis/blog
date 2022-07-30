@@ -1,7 +1,9 @@
 /* reset css */
 
 import { createGlobalStyle } from 'styled-components'
-import { fontPrimary } from '.'
+import theme, { fontPrimary } from '.'
+
+const { black } = theme.colors
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -17,7 +19,9 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
 font-family: ${fontPrimary.fontFamily};
+background-color: ${black};
 }
+
 a {
   text-decoration: none;
 }
