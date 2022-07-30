@@ -9,8 +9,8 @@ const TextContainer = styled.div`
 
 const Text = styled.p`
   text-align: center;
-  color: red;
-  font-size: 14px;
+  color: ${({ theme }) => theme.colors.purple};
+  font-size: 20px;
   line-height: 16px;
 `
 
@@ -24,7 +24,9 @@ const rotate = keyframes`
 `
 
 const StyledIconLoading = styled(IconLoading)`
+  fill: ${({ theme }) => theme.colors.red};
   animation: ${rotate} 2s linear infinite;
+  margin-bottom: 15px;
 `
 
 const Loading = ({ children }: ChildrenProps) => (

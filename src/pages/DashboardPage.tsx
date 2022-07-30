@@ -1,14 +1,9 @@
 import Title from '../components/common/Title'
-import styled from 'styled-components'
-
-const DashboardPageContainer = styled.section`
-  background-color: #fff;
-`
 
 const DashboardPage = () => (
-  <DashboardPageContainer>
+  <section>
     <Title>Dashboard</Title>
-  </DashboardPageContainer>
+  </section>
 )
 
 export default DashboardPage

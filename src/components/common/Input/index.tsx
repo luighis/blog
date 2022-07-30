@@ -5,10 +5,12 @@ export const Input = styled.input`
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid ${({ theme }) => theme.colors.white02};
   border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
   &:focus {
-    outline: 1px solid red;
+    outline: 2px solid ${({ theme }) => theme.colors.purple};
   }
 `
 

@@ -1,5 +1,4 @@
 /* reset css */
-
 import { createGlobalStyle } from 'styled-components'
 import theme, { fontPrimary } from '.'
 
@@ -18,8 +17,9 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-font-family: ${fontPrimary.fontFamily};
-background-color: ${black};
+  font-family: ${fontPrimary.fontFamily};
+  background-color: ${black};
+  font-size: 16px;
 }
 
 a {

@@ -1,16 +1,13 @@
-import { NavLink, Outlet } from 'react-router-dom'
-import theme from '../../theme'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
-const { navHover } = theme.colors
-
 const NavContainer = styled.nav`
-  background-color: black;
-  padding: 20px 50px;
+  background-color: ${({ theme }) => theme.colors.black01};
+  padding: 30px 50px;
   display: flex;
-  gap: 15px;
+  gap: 25px;
   .active {
-    color: ${navHover};
+    color: ${({ theme }) => theme.colors.red};
   }
   @media only screen and (max-width: 600px) {
     & {
@@ -21,10 +18,10 @@ const NavContainer = styled.nav`
 `
 
 const StyledLink = styled(NavLink)`
-  font-weight: 500;
-  color: white;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.white};
   &:hover {
-    color: ${navHover};
+    color: ${({ theme }) => theme.colors.red};
     transition: all 0.3s;
   }
 `
@@ -34,7 +31,6 @@ const Navbar = () => {
     <NavContainer>
       <StyledLink to='/'>Dashboard</StyledLink>
       <StyledLink to='/users'>Users</StyledLink>
-      <Outlet />
     </NavContainer>
   )
 }

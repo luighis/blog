@@ -51,7 +51,6 @@ export function fetchAddPostsUser(post) {
 }
 
 export function fetchRemovePostsUser(postId) {
-  console.log('🚀 ~ file: postsUser.action.ts ~ line 53 ~ fetchRemovePostsUser ~ postId', postId)
   return async (dispatch) => {
     dispatch(loading())
 

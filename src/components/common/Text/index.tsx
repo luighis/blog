@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Text = styled.p`
-  color: green;
+  color: ${({ theme }) => theme.colors.white02};
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;

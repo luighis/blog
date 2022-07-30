@@ -4,9 +4,9 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ea3546;
-  color: white;
-  border-radius: 4px;
+  background: ${({ theme }) => theme.colors.red};
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: 3px;
   font-weight: 700;
   height: 37px;
   min-width: 100px;
@@ -14,7 +14,7 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 13px;
   &:hover {
-    opacity: 0.9;
+    background: ${({ theme }) => theme.colors.red01};
     transition: all 0.3s ease-in-out;
   }
 `

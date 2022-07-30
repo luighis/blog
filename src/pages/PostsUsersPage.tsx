@@ -13,13 +13,13 @@ import Button from '../components/common/Button'
 import FormModal from '../components/FormModal'
 
 const StyledSubTitle = styled(SubTitle)`
-  color: red;
-  padding: 5px 0 10px;
+  color: ${({ theme }) => theme.colors.purple};
+  padding: 5px 0 15px;
 `
 
 const TitleContainer = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 20px;
   align-items: center;
 `
 
@@ -57,7 +57,6 @@ const PostsUsersPage = () => {
         <Title>Posts</Title>
         <Button onClick={handleOpen}>Add Post</Button>
       </TitleContainer>
-
       <StyledSubTitle>User - {user}</StyledSubTitle>
       {renderPosts()}
     </section>
